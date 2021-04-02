@@ -13,14 +13,16 @@ func _physics_process(delta):
 		vel.x -= step
 	elif Input.is_action_pressed("Player_goright"):
 		vel.x += step
-	vel.y += grav * delta
+	if Input.is_action_pressed("Player_goup"):
+		vel.y -= step
+	elif Input.is_action_pressed("Player_godown"):
+		vel.y += step
+	vel.y *= 0.9
 	vel.x *= 0.9
 	if (vel.x < 0):
-		PlayerSprite.flip_h = false
+		PlayerSprite.flip_h = true
 	if (vel.x > 0):
-		PlayerSprite.flip_h = true	
-	if Input.is_action_pressed("Player_dojump") && is_on_floor():
-		vel.y -= jumpHeight
+		PlayerSprite.flip_h = false
 	
 	vel = move_and_slide(vel, Vector2.UP)	
 
