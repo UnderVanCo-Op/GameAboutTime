@@ -25,7 +25,8 @@ func _physics_process(delta):
 		PlayerSprite.flip_h = false
 	
 	vel = move_and_slide(vel, Vector2.UP)	
-	
+	position.x = clamp(position.x, 50, 1920)
+	position.y = clamp(position.y, 20, 1055)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
