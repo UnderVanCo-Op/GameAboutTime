@@ -25,6 +25,10 @@ config/description="Out First pixel pseudo 2D game"
 run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SingletoneTest="*res://Scripts/SingletoneTest.gd"
+
 [display]
 
 window/size/width=1920
