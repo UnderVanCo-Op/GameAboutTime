@@ -15,3 +15,7 @@ rect_min_size = Vector2( 1024, 768 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="HBOX_C"]
+margin_right = 800.0
+margin_bottom = 980.0
