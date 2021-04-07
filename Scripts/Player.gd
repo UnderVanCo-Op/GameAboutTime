@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var ui = get_viewport().get_node("Root/UI/Control") #interface reference
+
 var step : int = 20
 var itemsCount : int = 0
 var vel = Vector2()			# speed (velocity)
@@ -10,12 +12,13 @@ onready var PlayerSprite = get_node("Sprite")
 func pick(item):
 	#itemsCount += 1
 	#print("Item count: ", str(itemsCount))
-	var itName = item.get_name()
+	var itName = item.get_item()
 	if itName in inventory.keys():
 		inventory[itName] += item.get_amount()
 	else:
 		inventory[itName] =  item.get_amount()
-
+	ui.update_inventory(inventory)
+	
 func _physics_process(_delta):
 	if Input.is_action_pressed("Player_goleft"):
 		vel.x -= step
@@ -40,6 +43,9 @@ func _physics_process(_delta):
 func _ready():
 	pass # Replace with function body.
 
+func _unhandled_input(event):
+	if event.is_action_pressed("Inventory_Open"):
+		ui.toggle_inventory(inventory)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/InventItem.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/InventItem.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Items/Key.png" type="Texture" id=2]
 
 [node name="InventItem" type="TextureRect"]
@@ -15,11 +15,13 @@ __meta__ = {
 }
 
 [node name="Amount" type="Label" parent="."]
-margin_left = 31.875
-margin_top = 20.5
-margin_right = 55.875
-margin_bottom = 34.5
+margin_left = 26.625
+margin_top = 17.25
+margin_right = 50.625
+margin_bottom = 31.25
 rect_min_size = Vector2( 8, 14 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "11"
 __meta__ = {
 "_edit_use_anchors_": false
 }

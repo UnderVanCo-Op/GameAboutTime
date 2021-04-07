@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/UI/plashka.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/InventItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/NinePanelInventory.gd" type="Script" id=3]
+
+
+[node name="NinePanel" type="NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -70.0
+margin_right = 70.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 140, 35 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollC" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 3.0
+margin_right = -4.0
+margin_bottom = -3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridC" type="GridContainer" parent="ScrollC"]
+margin_right = 110.0
+margin_bottom = 68.0
+custom_constants/hseparation = 7
+columns = 3
+
+[node name="InventItem" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+
+[node name="InventItem2" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+margin_left = 39.0
+margin_right = 71.0
+
+[node name="InventItem3" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+margin_left = 78.0
+margin_right = 110.0
+
+[node name="InventItem4" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+margin_top = 36.0
+margin_bottom = 68.0
+
+[node name="InventItem5" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+margin_left = 39.0
+margin_top = 36.0
+margin_right = 71.0
+margin_bottom = 68.0
+
+[node name="InventItem6" parent="ScrollC/GridC" instance=ExtResource( 2 )]
+margin_left = 78.0
+margin_top = 36.0
+margin_right = 110.0
+margin_bottom = 68.0
