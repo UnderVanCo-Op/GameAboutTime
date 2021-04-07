@@ -16,7 +16,7 @@ func ItemGen():
 		new_item.position = Vector2(int(rand_range(0, 1000)), int(rand_range(0, 1000)))
 	
 func get_player():
-	return $Player	 
+	return $Player	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
