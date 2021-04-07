@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/InventItem.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Items/Key.png" type="Texture" id=2]
+
+[node name="InventItem" type="TextureRect"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="."]
+margin_left = 31.875
+margin_top = 20.5
+margin_right = 55.875
+margin_bottom = 34.5
+rect_min_size = Vector2( 8, 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

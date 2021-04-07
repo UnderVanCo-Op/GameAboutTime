@@ -1,12 +1,8 @@
-extends Node2D
+extends TextureRect
 
-var itemName = ""
-
-func set_item(it_name):
-	itemName = it_name
-	$Sprite.texture = load("res://Sprites/Items/" + it_name + ".png")
-
-
+func set_item(item_name, amount):
+	texture = load("res://Sprites/Items/" + str(item_name) + ".png")
+	$Amount.text = str(amount)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
