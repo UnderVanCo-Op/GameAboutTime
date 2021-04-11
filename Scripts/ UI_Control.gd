@@ -1,9 +1,9 @@
 extends Control
 
-onready var pack = $NinePanel
+onready var pack = $NinePanel	# Хранит ссыль на ninePanel
 
 
-func toggle_inventory(inventory):
+func toggle_inventory(inventory):	# Метод переключения видимости инвентаря
 	if pack.visible:
 		pack.clear()
 		pack.visible = false
@@ -14,7 +14,7 @@ func toggle_inventory(inventory):
 func _ready():
 	pass # Replace with function body.
 
-func update_inventory(inventory):
+func update_inventory(inventory):	# Перезагрузить инвентарь
 	if pack.visible:
 		pack.show_inventory(inventory)
 
