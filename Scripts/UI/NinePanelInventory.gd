@@ -18,7 +18,3 @@ func show_inventory(inventory):		# Показать инвентарь
 		var newItem = item.instance()
 		container.add_child(newItem)
 		newItem.set_item(i, inventory[i])
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

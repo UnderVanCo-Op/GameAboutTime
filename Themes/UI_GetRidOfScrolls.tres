@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[resource]
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = null
+HScrollBar/styles/grabber_highlight = null
+HScrollBar/styles/grabber_pressed = null
+HScrollBar/styles/scroll = SubResource( 1 )
+HScrollBar/styles/scroll_focus = null
