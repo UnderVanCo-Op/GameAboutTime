@@ -18,3 +18,4 @@ func _ready():
 func update_inventory(inventory):	# Перезагрузить инвентарь
 	if pack.visible:
 		pack.show_inventory(inventory)
+	downbar.update_inv(inventory)
