@@ -12,7 +12,6 @@ func ItemGen():
 		var new_item = item.instance()
 		$Items.add_child(new_item)		# Добавляем ребенка Пустышке Items внутри MainScene
 		new_item.set_item(itemList[rand_range(0,2)])	# Рандомно назначаем этого ребенка из списка айтемов 
-		randomize()		# Функция рандомизирует rand_range (берёт текущее время по дефолту)
 		new_item.position = Vector2(int(rand_range(0, 1000)), int(rand_range(0, 1000)))	# Устанавливаем позицию рандомно
 	
 func get_player():

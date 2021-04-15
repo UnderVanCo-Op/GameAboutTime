@@ -4,7 +4,7 @@ onready var ui = get_viewport().get_node("Root/UI/FullRectTrue") #interface refe
 
 var step : int = 20		# размер шага
 var itemsCount : int = 0	# Кол-во вещей в инвентаре
-var vel = Vector2()			# speed (velocity)
+var speed = Vector2()			# скорость (velocity)
 var inventory = {}		# Лист вещей в инвентаре
 
 onready var PlayerSprite = get_node("Sprite")	# Спрайт игрока
@@ -21,21 +21,22 @@ func pick(item):	# метод подбора вещи
 	
 func _physics_process(_delta):
 	if Input.is_action_pressed("Player_goleft"):
-		vel.x -= step
+		speed.x -= step
 	elif Input.is_action_pressed("Player_goright"):
-		vel.x += step
+		speed.x += step
 	if Input.is_action_pressed("Player_goup"):
-		vel.y -= step
+		speed.y -= step
 	elif Input.is_action_pressed("Player_godown"):
-		vel.y += step
-	vel.y *= 0.9
-	vel.x *= 0.9
-	if (vel.x < 0):		# Флип для спрайта
+		speed.y += step
+	speed.y *= 0.9	# снижение скорости
+	speed.x *= 0.9	# снижение скорости
+	if (speed.x < 0):		# Флип для спрайта
 		PlayerSprite.flip_h = true
-	if (vel.x > 0):		# Флип для спрайта
+	if (speed.x > 0):		# Флип для спрайта
 		PlayerSprite.flip_h = false
-	
-	vel = move_and_slide(vel, Vector2.UP)	# Плавно перемещаться
+	#if(speed.length() > step):	# возможный фикс диагональной проблемы
+		#speed.normalized()
+	speed = move_and_slide(speed, Vector2.UP)	# Плавно перемещаться
 	position.x = clamp(position.x, 50, 1920)	# Границы мира
 	position.y = clamp(position.y, 20, 1055)	# Границы мира
 
