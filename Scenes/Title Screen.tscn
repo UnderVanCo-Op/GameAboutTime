@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/UI/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/TitleScreenBFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/UI/Character.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Version_dynFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/Title Screen.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Title Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuC" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = 112.0
+margin_right = -192.0
+margin_bottom = -104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="MenuC"]
+margin_right = 1536.0
+margin_bottom = 200.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="CenterRowC" type="HBoxContainer" parent="MenuC"]
+margin_top = 204.0
+margin_right = 1536.0
+margin_bottom = 804.0
+size_flags_vertical = 3
+
+[node name="ButtonsC" type="VBoxContainer" parent="MenuC/CenterRowC"]
+margin_right = 766.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 7
+alignment = 1
+
+[node name="StartNewGameB" type="Button" parent="MenuC/CenterRowC/ButtonsC"]
+margin_top = 188.0
+margin_right = 766.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 50, 70 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MenuC/CenterRowC/ButtonsC/StartNewGameB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0.470588, 0.470588, 0.470588, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartNewGameB2" type="Button" parent="MenuC/CenterRowC/ButtonsC"]
+margin_top = 265.0
+margin_right = 766.0
+margin_bottom = 335.0
+rect_min_size = Vector2( 50, 70 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MenuC/CenterRowC/ButtonsC/StartNewGameB2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0.470588, 0.470588, 0.470588, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartNewGameB3" type="Button" parent="MenuC/CenterRowC/ButtonsC"]
+margin_top = 342.0
+margin_right = 766.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 50, 70 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MenuC/CenterRowC/ButtonsC/StartNewGameB3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0.470588, 0.470588, 0.470588, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuC/CenterRowC"]
+margin_left = 770.0
+margin_right = 1536.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Character" type="TextureRect" parent="MenuC/CenterRowC/CenterContainer"]
+margin_left = 183.0
+margin_right = 583.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+
+[node name="Version" type="Label" parent="MenuC"]
+margin_top = 808.0
+margin_right = 1536.0
+margin_bottom = 864.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Version Pre-Alpha 16/04/2021"
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
+anims/fade = SubResource( 1 )
+[connection signal="pressed" from="MenuC/CenterRowC/ButtonsC/StartNewGameB" to="." method="_on_StartNewGameB_pressed"]

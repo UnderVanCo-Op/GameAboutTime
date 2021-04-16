@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="FirstProject"
 config/description="Out First pixel 2D game"
-run/main_scene="res://Scenes/Root.tscn"
+run/main_scene="res://Scenes/Title Screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
