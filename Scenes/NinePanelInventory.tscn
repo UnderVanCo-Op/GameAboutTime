@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/UI/plashka.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/UI/NinePanelInventory.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/UI/NP_UpBar.gd" type="Script" id=3]
 
 [node name="NinePanel" type="NinePatchRect"]
 anchor_left = 0.5

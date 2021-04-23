@@ -1,10 +1,10 @@
 extends Control
 
-onready var pack = $NinePanel	# Хранит ссыль на ninePanel
+onready var pack = $NP_UpBar	# Хранит ссыль на ninePanel
 onready var downbar = $UI_DownBar	# Хранит ссыль на DownBar
 
 func toggle_inventory(inventory):	# Метод переключения видимости инвентаря
-	print("toggle_inv worked")
+	#print("toggle_inv worked")
 	if pack.visible:
 		pack.clear()
 		pack.visible = false

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Sprites/UI/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/UI/Title Screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/TitleScreenBFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Sprites/UI/Character.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/Version_dynFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Scripts/Title Screen.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/Version_dynFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/UI/Character.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/Logo.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -41,7 +41,7 @@ tracks/1/keys = {
 [node name="Title Screen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,7 +60,7 @@ __meta__ = {
 [node name="Logo" type="TextureRect" parent="MenuC"]
 margin_right = 1536.0
 margin_bottom = 200.0
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="CenterRowC" type="HBoxContainer" parent="MenuC"]
@@ -156,15 +156,15 @@ size_flags_vertical = 3
 margin_left = 183.0
 margin_right = 583.0
 margin_bottom = 600.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Version" type="Label" parent="MenuC"]
 margin_top = 808.0
 margin_right = 1536.0
 margin_bottom = 864.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
-text = "Version Pre-Alpha 16/04/2021"
+custom_fonts/font = ExtResource( 3 )
+text = "Version NOT even Pre-Alpha 23/04/2021"
 
 [node name="Fade" type="ColorRect" parent="."]
 visible = false

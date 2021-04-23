@@ -9,8 +9,9 @@ func _ready():
 
 func _on_StartNewGameB_pressed():
 	$Fade/AnimationPlayer.play("fade")
-	print("but worked")
+	#print("but worked")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	get_tree().change_scene("res://Scenes/Root.tscn")
+	print("change scene worked")
+	get_tree().change_scene("res://Scenes/Levels/Level1/Root.tscn")

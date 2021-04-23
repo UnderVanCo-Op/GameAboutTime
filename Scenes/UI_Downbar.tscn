@@ -29,12 +29,16 @@ __meta__ = {
 [node name="ScrollC" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxC" type="HBoxContainer" parent="ScrollC"]
-margin_right = 528.0
+margin_right = 480.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 480, 32 )
 custom_constants/separation = 30

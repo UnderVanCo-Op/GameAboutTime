@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var ui = get_viewport().get_node("Root/UI/FullRectTrue") #interface reference
+onready var ui = get_viewport().get_node("Root/UI/FullRect") #interface reference
 
 var step : int = 20		# размер шага
 var itemsCount : int = 0	# Кол-во вещей в инвентаре

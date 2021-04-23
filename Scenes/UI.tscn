@@ -6,7 +6,7 @@
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="FullRectTrue" type="Control" parent="."]
+[node name="FullRect" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -14,6 +14,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UI_DownBar" parent="FullRectTrue" instance=ExtResource( 3 )]
+[node name="UI_DownBar" parent="FullRect" instance=ExtResource( 3 )]
+margin_top = -48.0
+margin_bottom = -6.0
 
-[node name="NinePanel" parent="FullRectTrue" instance=ExtResource( 2 )]
+[node name="NP_UpBar" parent="FullRect" instance=ExtResource( 2 )]
