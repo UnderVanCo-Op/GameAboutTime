@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Levels/Level1/TM_Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=4]
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -26.1625, 4.75684 )
 script = ExtResource( 2 )
 
 [node name="Tilemap" parent="." instance=ExtResource( 3 )]
+position = Vector2( 26.1625, -4.75684 )
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 274, 314 )
+position = Vector2( 266.162, 299.243 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 506.162, 251.243 )
