@@ -1,6 +1,6 @@
 extends NinePatchRect
 
-onready var item = preload("res://Scenes/InventItem.tscn") 	# предзагружаем префаб айтема
+onready var item = preload("res://Scenes/UI/InventItem.tscn") 	# предзагружаем префаб айтема
 onready var container = $ScrollC/GridC	# Контейнер
 
 func _ready():
