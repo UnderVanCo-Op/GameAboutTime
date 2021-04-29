@@ -9,4 +9,5 @@ func _input(event):
 
 func _on_Button_pressed():
 	Global.goto_scene("res://Scenes/Title Screen/Title Screen.tscn")
+	get_tree().paused = false	# выключаем паузу физики, если она была
 	#get_tree().change_scene("res://Scenes/Title Screen/Title Screen.tscn")
