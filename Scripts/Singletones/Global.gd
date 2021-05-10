@@ -1,11 +1,47 @@
 extends Node
 
 var current_scene = null
+var health : int = 100
+var isGameLoaded : bool = false
 
 func _ready():
 	randomize()
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
+
+func save_game():
+	isGameLoaded = false
+	var dict = {
+		"health" : health
+	}
+	var file = File.new()
+	#file.open_encrypted_with_pass("res://save.json", File.WRITE, "SuPkey")
+	var error = file.open("res://save.json", File.WRITE)
+	if error == OK:
+		file.store_string(to_json(dict))
+		file.close()
+	else:
+		print("error in save")
+
+func load_game():
+	isGameLoaded = true
+	var file = File.new()
+	if not file.file_exists("res://save.json"):
+		print("File not exists!")
+		return
+	
+	#file.open_encrypted_with_pass("res://save.json", File.READ, "SuPkey")
+	var error = file.open("res://save.json", File.READ)
+	if error == OK:
+		var dict = parse_json(file.get_as_text())
+		health = dict["health"]
+		
+		file.close()
+	else:
+		print("error in load")
+
+
+
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -18,7 +54,6 @@ func goto_scene(path):
 	# we can be sure that no code from the current scene is running:
 
 	call_deferred("_deferred_goto_scene", path)
-
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
