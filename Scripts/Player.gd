@@ -17,7 +17,7 @@ func pick(item):	# метод подбора вещи
 		inventory[itName] += item.get_amount()	
 	else:
 		inventory[itName] =  item.get_amount()	# Если такого предмета нет, то добавить новый с нужным кол-вом
-	ui.update_inventory(inventory)	# обновить инвентарь
+ц	ui.update_inventory(inventory)	# обновить инвентарь
 	
 func _physics_process(_delta):
 	if Input.is_action_pressed("Player_goleft"):
